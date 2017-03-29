@@ -7,8 +7,13 @@
 //
 
 #import "ViewController.h"
+#import "RestAPI.h"
 
-@interface ViewController ()
+@interface ViewController () <RestAPIDelegate, NSURLSessionDelegate>
+
+@property (nonatomic, strong) RestAPI *restApi;
+@property (nonatomic, strong) NSMutableArray *webTitles;
+@property (nonatomic, strong) NSMutableArray *sectionNames;
 
 @end
 
@@ -16,14 +21,70 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    [self httpGetRequest];
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(RestAPI *)restApi {
+    if (!_restApi) {
+        _restApi = [[RestAPI alloc] init];
+    }
+    return _restApi;
 }
+
+-(NSMutableArray *)webTitles {
+    if (!_webTitles) {
+        _webTitles = [[NSMutableArray alloc] init];
+    }
+    return _webTitles;
+}
+
+-(NSMutableArray *)sectionNames {
+    if (!_sectionNames) {
+        _sectionNames = [[NSMutableArray alloc] init];
+    }
+    return _sectionNames;
+}
+
+- (void)httpGetRequest {
+    NSString *str = @"https://52.89.213.205:8443";
+    str = [str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSURL *url = [NSURL URLWithString:str];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"GET"];
+    [request setAllowsAnyHTTPSCertificate:YES forHost:url];
+    self.restApi.delegate = self;
+    [self.restApi httpRequest:request];
+}
+
+- (void)getReceivedData:(NSMutableData *)data sender:(RestAPI *)sender
+{
+    NSError *error = nil;
+    NSDictionary *receivedData =[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+    NSDictionary *response = [[NSDictionary alloc] initWithDictionary:[receivedData objectForKey:@"response"]];
+    NSArray *results = [[NSArray alloc] initWithArray:[response objectForKey:@"results"]];
+    
+    for (int i; i < results.count; i++) {
+        NSDictionary *resultsItems = [results objectAtIndex:i];
+        NSString *webTitle = [resultsItems objectForKey:@"webTitle"];
+        [self.webTitles addObject:webTitle];
+        NSString *sectionName = [resultsItems objectForKey:@"sectionName"];
+        [self.sectionNames addObject:sectionName];
+    }
+    
+}
+
+-(void)connection:(NSURLConnection *)connection willSendRequestForAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
+    if ([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust] &&
+        [challenge.protectionSpace.host hasSuffix:@"https://52.89.213.205"]) {
+        // accept the certificate anyway
+        [challenge.sender useCredential:[NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust] forAuthenticationChallenge:challenge];
+    }
+    else {
+        [challenge.sender continueWithoutCredentialForAuthenticationChallenge:challenge];
+    }
+}
+
 
 
 @end

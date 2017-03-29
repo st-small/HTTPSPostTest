@@ -15,6 +15,7 @@
 		571E67C31E8B99E000CE089C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 571E67C11E8B99E000CE089C /* LaunchScreen.storyboard */; };
 		571E67CE1E8B99E000CE089C /* HTTPSPostTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 571E67CD1E8B99E000CE089C /* HTTPSPostTestTests.m */; };
 		571E67D91E8B99E000CE089C /* HTTPSPostTestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 571E67D81E8B99E000CE089C /* HTTPSPostTestUITests.m */; };
+		571E67E81E8BA27B00CE089C /* RestAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 571E67E71E8BA27B00CE089C /* RestAPI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		571E67D41E8B99E000CE089C /* HTTPSPostTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HTTPSPostTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		571E67D81E8B99E000CE089C /* HTTPSPostTestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTTPSPostTestUITests.m; sourceTree = "<group>"; };
 		571E67DA1E8B99E000CE089C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		571E67E61E8BA27B00CE089C /* RestAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestAPI.h; sourceTree = "<group>"; };
+		571E67E71E8BA27B00CE089C /* RestAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestAPI.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,8 @@
 		571E67B21E8B99E000CE089C /* HTTPSPostTest */ = {
 			isa = PBXGroup;
 			children = (
+				571E67E61E8BA27B00CE089C /* RestAPI.h */,
+				571E67E71E8BA27B00CE089C /* RestAPI.m */,
 				571E67B61E8B99E000CE089C /* AppDelegate.h */,
 				571E67B71E8B99E000CE089C /* AppDelegate.m */,
 				571E67B91E8B99E000CE089C /* ViewController.h */,
@@ -202,6 +207,7 @@
 		571E67A81E8B99E000CE089C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SiS;
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Stanly Shiyanovskiy";
 				TargetAttributes = {
@@ -276,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				571E67E81E8BA27B00CE089C /* RestAPI.m in Sources */,
 				571E67BB1E8B99E000CE089C /* ViewController.m in Sources */,
 				571E67B81E8B99E000CE089C /* AppDelegate.m in Sources */,
 				571E67B51E8B99E000CE089C /* main.m in Sources */,
