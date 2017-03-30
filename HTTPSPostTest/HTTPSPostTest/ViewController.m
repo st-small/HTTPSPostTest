@@ -52,7 +52,6 @@
     NSURL *url = [NSURL URLWithString:str];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"GET"];
-    [request setAllowsAnyHTTPSCertificate:YES forHost:url];
     self.restApi.delegate = self;
     [self.restApi httpRequest:request];
 }

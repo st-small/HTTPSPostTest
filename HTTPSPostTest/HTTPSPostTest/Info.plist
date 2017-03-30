@@ -22,6 +22,16 @@
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>https://52.89.213.205</key>
+            <dict>
+                <key>IncludesSubdomains</key>
+                <true/>
+                <key>ExceptionRequiresForwardSecrecy</key>
+                <false/>
+            </dict>
+		</dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
