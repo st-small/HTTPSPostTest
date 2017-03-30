@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		527243D01E8BB6B900E18467 /* SiSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 527243CF1E8BB6B900E18467 /* SiSViewController.m */; };
-		527243D41E8BEEB800E18467 /* Cert.cer in Resources */ = {isa = PBXBuildFile; fileRef = 527243D31E8BEEB800E18467 /* Cert.cer */; };
 		571E67B51E8B99E000CE089C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 571E67B41E8B99E000CE089C /* main.m */; };
 		571E67B81E8B99E000CE089C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 571E67B71E8B99E000CE089C /* AppDelegate.m */; };
 		571E67BE1E8B99E000CE089C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 571E67BC1E8B99E000CE089C /* Main.storyboard */; };
@@ -38,7 +37,6 @@
 /* Begin PBXFileReference section */
 		527243CE1E8BB6B900E18467 /* SiSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiSViewController.h; sourceTree = "<group>"; };
 		527243CF1E8BB6B900E18467 /* SiSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiSViewController.m; sourceTree = "<group>"; };
-		527243D31E8BEEB800E18467 /* Cert.cer */ = {isa = PBXFileReference; lastKnownFileType = file; name = Cert.cer; path = ../Cert.cer; sourceTree = "<group>"; };
 		571E67B01E8B99E000CE089C /* HTTPSPostTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HTTPSPostTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		571E67B41E8B99E000CE089C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		571E67B61E8B99E000CE089C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -111,7 +109,6 @@
 				571E67BF1E8B99E000CE089C /* Assets.xcassets */,
 				571E67C11E8B99E000CE089C /* LaunchScreen.storyboard */,
 				571E67C41E8B99E000CE089C /* Info.plist */,
-				527243D31E8BEEB800E18467 /* Cert.cer */,
 				571E67B31E8B99E000CE089C /* Supporting Files */,
 			);
 			path = HTTPSPostTest;
@@ -255,7 +252,6 @@
 			files = (
 				571E67C31E8B99E000CE089C /* LaunchScreen.storyboard in Resources */,
 				571E67C01E8B99E000CE089C /* Assets.xcassets in Resources */,
-				527243D41E8BEEB800E18467 /* Cert.cer in Resources */,
 				571E67BE1E8B99E000CE089C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
